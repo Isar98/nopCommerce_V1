@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="ExtentListeners.ExtentListeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="TestPages.NoCommTestPage">
+        <methods>
+          <include name="addPhoneAndCheckout"/>
+          <include name="testCellphoneTab"/>
+          <include name="checkoutBillingInfo"/>
+          <include name="setUp"/>
+          <include name="checkoutShipAndPayment"/>
+          <include name="completeOrder"/>
+        </methods>
+      </class> <!-- TestPages.NoCommTestPage -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestPages.NoCommTestPage">
+      <class name="TestPages.dataProviderMySqlTest">
         <methods>
-          <include name="testCellphoneTab"/>
-          <include name="setUp"/>
+          <include name="setUpTest"/>
         </methods>
-      </class> <!-- TestPages.NoCommTestPage -->
+      </class> <!-- TestPages.dataProviderMySqlTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

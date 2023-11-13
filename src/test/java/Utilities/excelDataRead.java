@@ -11,11 +11,11 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class excelDataRead {
-	String TestData_Path="Data.xlsx";
-	Workbook book;
-	Sheet sheet;
+	static String TestData_Path="src/test/resources/LoginData.xlsx";
+	static Workbook book;
+	static Sheet sheet;
 	
-	public Object[][] getTestData(String sheetName) throws InvalidFormatException{
+	public static Object[][] getTestData(String sheetName) throws InvalidFormatException{
 		FileInputStream file = null;
 		try{
 			file= new FileInputStream(TestData_Path);

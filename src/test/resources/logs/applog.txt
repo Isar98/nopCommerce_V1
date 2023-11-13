@@ -1,11 +1,12 @@
-INFO    2023-10-30 20:05:49,058 [main] TestPages.NoCommTestPage  - setting up the browser for the test
-INFO    2023-10-30 20:05:59,597 [main] TestPages.NoCommTestPage  - Navigating to electronic then cellphone page
-INFO    2023-10-30 20:06:07,016 [main] TestPages.NoCommTestPage  - NopCommerce cellphone Page launched successfully
-INFO    2023-10-30 20:06:07,033 [main] TestPages.NoCommTestPage  - Add item to cart then naviagte to cart>checkout.checkout as guest
-INFO    2023-10-30 20:06:24,064 [main] TestPages.NoCommTestPage  - NopCommerce Billing page launched succesfully
-INFO    2023-10-30 20:06:24,068 [main] TestPages.NoCommTestPage  - Enter Billing info and launch shipping page
-INFO    2023-10-30 20:06:40,135 [main] TestPages.NoCommTestPage  - NopCommerce Shipping page launched succesfully
-INFO    2023-10-30 20:06:40,139 [main] TestPages.NoCommTestPage  - Enter credit card info and launch confirmation page
-INFO    2023-10-30 20:06:59,800 [main] TestPages.NoCommTestPage  - NopCommerce confirmation page launched succesfully
-INFO    2023-10-30 20:06:59,802 [main] TestPages.NoCommTestPage  - return and launch Home page
-INFO    2023-10-30 20:07:10,355 [main] TestPages.NoCommTestPage  - NopCommerce  Home page launched succesfully
+INFO    2023-11-12 21:16:48,587 [main] TestPages.NoCommTestPage  - setting up the browser for the test
+INFO    2023-11-12 21:16:54,290 [main] TestPages.NoCommTestPage  - nopcCommerce home page launched successfully
+INFO    2023-11-12 21:16:54,302 [main] TestPages.NoCommTestPage  - Navigating to electronic then cellphone page
+INFO    2023-11-12 21:17:01,632 [main] TestPages.NoCommTestPage  - NopCommerce cellphone Page launched successfully
+INFO    2023-11-12 21:17:01,702 [main] TestPages.NoCommTestPage  - Add item to cart then naviagte to cart>checkout.checkout as guest
+INFO    2023-11-12 21:17:20,471 [main] TestPages.NoCommTestPage  - NopCommerce Billing page launched succesfully
+INFO    2023-11-12 21:17:20,478 [main] TestPages.NoCommTestPage  - Enter Billing info and launch shipping page
+INFO    2023-11-12 21:17:36,540 [main] TestPages.NoCommTestPage  - NopCommerce Shipping page launched succesfully
+INFO    2023-11-12 21:17:36,551 [main] TestPages.NoCommTestPage  - Enter credit card info and launch confirmation page
+INFO    2023-11-12 21:17:56,279 [main] TestPages.NoCommTestPage  - NopCommerce confirmation page launched succesfully
+INFO    2023-11-12 21:17:56,288 [main] TestPages.NoCommTestPage  - return and launch Home page
+INFO    2023-11-12 21:18:06,954 [main] TestPages.NoCommTestPage  - NopCommerce  Home page launched succesfully

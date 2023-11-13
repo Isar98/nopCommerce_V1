@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -50,12 +51,21 @@ public class NoCommTestPage extends BaseClass {
 			e.printStackTrace();
 		}
 		
-		baseSetup(prop.getProperty("browser"),
-				prop.getProperty("base_url"));
+		baseSetup(prop.getProperty("browser"));
 		
+		if (getDriver()!= null) {
+			getDriver().get(prop.getProperty("base_url"));
+			hp = new HomePage();
+			Assert.assertNotNull(hp, "ERROR !! nopCommerce home page not launched");
+			Log.info("nopcCommerce home page launched successfully");
+		}else {
+			Log.info("Unable to setup browser for the test");;
+		}
 		//baseSetup("firefox", url);
-		Thread.sleep(5000);
-		hp = new HomePage();
+		//Thread.sleep(5000);
+		//hp = new HomePage();
+				
+				
 	}
 	
 	@Test(priority=2,enabled=true)
@@ -148,5 +158,12 @@ public class NoCommTestPage extends BaseClass {
 		}
 		
 	}
+	
+	@AfterClass
+	public void tearDown() {
+		getDriver().quit();
+	}
+	
+	
 
 }

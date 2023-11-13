@@ -14,53 +14,44 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
 
 public class BaseClass {
+	private static WebDriver driver;
 	
-	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	protected static ThreadLocal<WebDriver> tsdriver = new ThreadLocal<>();
 	
-	public WebDriver getDriver() {
-		return driver.get();
-	}
+	String ffPath = System.getProperty ("user.dir") + "\\Browsers\\geckodriver.exe";
+	String chrPath = System.getProperty ("user.dir") + "\\Browsers\\chromedriver.exe";
 		
-	public  void baseSetup(String browser, String url) throws InterruptedException {
-		
-		String 	ffpath = System.getProperty ("user.dir") + "\\src\\test\\resources\\Browsers\\geckodriver.exe";
-		String 	chrpath = System.getProperty ("user.dir") + "\\src\\test\\resources\\Browsers\\chromedriver";
+	public  void baseSetup(String browser) throws InterruptedException {
 		
 		switch(browser) {
 			
 		  case "firefox":
-
-		    FirefoxOptions ffoptions = new FirefoxOptions();
-		    ffoptions.setProfile(new FirefoxProfile());
-		    ffoptions.addPreference("dom.webnotifications.enabled", false);
-		    ffoptions.setBinary("C://Program Files//Mozilla Firefox/firefox.exe");
-		    System.setProperty("webdriver.gecko.driver", ffpath); 
-		    driver.set(new FirefoxDriver(ffoptions));
+		    driver = new FirefoxDriver();
 		    break;
 		    
 		  case "chrome":
-			System.out.println(chrpath);
-			ChromeOptions chroptions = new ChromeOptions();
-			chroptions.addArguments("--disable-notifications");
-			System.setProperty("webdriver.chrome.driver", chrpath);	 
-			driver.set(new ChromeDriver(chroptions));
+			ChromeOptions ops = new ChromeOptions();
+			ops.addArguments("--disable-notifications");
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/Browsers/chromedriver.exe");
+			driver = new ChromeDriver(ops);
 		    break;
 		   
 		  case "edge":
+			  driver = new EdgeDriver();
 			    break;
 	    
 	  default:
-		  throw new IllegalStateException("Unexpected value: " + browser);
 	}
 		
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		getDriver().get(url);  
+		getDriver().get(getUrl());  
 		getDriver().manage().window().maximize();
 		//Thread.sleep(3000);
 		
@@ -69,6 +60,10 @@ public class BaseClass {
 	public String getUrl() {
 		return getDriver().getCurrentUrl();
 	}
+	protected WebDriver getDriver() {
+		return driver;
+	}
+
 	public String getTitle() {
 		return getDriver().getTitle();
 	}
@@ -97,6 +92,10 @@ public class BaseClass {
 		props.load(reader);
 		return props;
 		}
+	
+	public void tearDown() {
+		//tearDown();
+	}
 
 	
 }

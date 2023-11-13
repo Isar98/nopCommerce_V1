@@ -22,11 +22,11 @@ public class HomePage extends BaseClass {
 		PageFactory.initElements(getDriver(),this);
 	}
 	
-	public LoginPage login() throws InterruptedException {
+	public LoginPage loginLinkClick() {
 		LoginTab.click();
-		Thread.sleep(5000);
 		return new LoginPage();
 	}
+	
 	
 	public CellphonePage cellphoneTab() throws InterruptedException {
 		Actions actions = new Actions(getDriver());
@@ -38,5 +38,7 @@ public class HomePage extends BaseClass {
 		  Thread.sleep(5000);
 		return new CellphonePage();
 	}
+
+
 
 }
